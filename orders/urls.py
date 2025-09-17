@@ -1,6 +1,8 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import MenuItemViewSet, OrderViewSet, CompletedOrderViewSet, update_order_item_status, complete_order
+from django.conf import settings
+from django.conf.urls.static import static
 
 router = DefaultRouter()
 router.register(r'menu', MenuItemViewSet)
@@ -12,3 +14,6 @@ urlpatterns = [
     path('order-items/<int:order_item_id>/status/', update_order_item_status, name='update-order-item-status'),
     path('orders/<int:order_id>/complete/', complete_order, name='complete-order'),
 ]
+
+if settings.DEBUG:  # condition alag likho
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
