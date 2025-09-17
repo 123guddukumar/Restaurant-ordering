@@ -57,14 +57,16 @@ CHANNEL_LAYERS = {
     },
 }
 
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:5173",
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",   # local Vite dev server
+    "https://restaurant-ordering-yjzk.onrender.com",  # backend URL
+]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://restaurant-ordering-yjzk.onrender.com",
     "http://localhost:5173"
 ]
+
 
 
 DATABASES = {
