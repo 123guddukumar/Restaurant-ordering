@@ -57,9 +57,15 @@ CHANNEL_LAYERS = {
     },
 }
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:5173",
+# ]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://restaurant-ordering-yjzk.onrender.com",
+    "http://localhost:5173"
 ]
+
 
 DATABASES = {
     "default": {
