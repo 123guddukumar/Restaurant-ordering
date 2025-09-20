@@ -59,25 +59,37 @@ CHANNEL_LAYERS = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    "https://restuarant-ordering.pages.dev/",
+    "https://restuarant-ordering.pages.dev",
     "http://localhost:5173",   # local Vite dev server
     "https://restaurant-ordering-yjzk.onrender.com",  # backend URL
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://restuarant-ordering.pages.dev/",
+    "https://restuarant-ordering.pages.dev",
     "https://restaurant-ordering-yjzk.onrender.com",
     "http://localhost:5173"
 ]
 
 
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'restaurant_ordering_db',
+        'USER': 'restaurant_ordering_db_user',
+        'PASSWORD': 'apljYeAwDEAGfo6q3ptgdhbkCFiXxetg',
+        'HOST': 'dpg-d37843ogjchc73c21lq0-a.oregon-postgres.render.com',
+        'PORT': '5432',
     }
 }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
